@@ -1,0 +1,12 @@
+{
+  "name": "js-generator",
+  "version": "0.0.1",
+  "description": "Generator function study.",
+  "keywords": ["generator"],
+  "dependencies": {
+    "co": "*",
+    "superagent": "*",
+    "thunkify": "*"
+  },
+  "license": "MIT"
+}
