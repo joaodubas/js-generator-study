@@ -9,17 +9,20 @@ Em especial, o uso de [`generators`][e-h-generators] para evitar o
 e receber dados simultaneamente.
 
 ```javascript
-function* producerAndConsumer(d) {
+function* producerAndConsumer() {
+  var counter = 0;
+  var random = 0;
   while (true) {
-    d = yield d;
-    console.log(value);
+    random = yield counter;
+    counter += 1;
+    console.log(random);
   }
 }
 
-var gen = producerAndConsumer(1);
+var gen = producerAndConsumer();
 gen.next()  // return {value: 1, done: false}
-gen.next(2)  // return {value: 2, done: false} e console.log(2)
-gen.next(3)  // return {value: 3, done: false} e console.log(3)
+gen.next('ola')  // return {value: 2, done: false} e console.log('ola')
+gen.next('mundo')  // return {value: 3, done: false} e console.log('mundo')
 
 ```
 
